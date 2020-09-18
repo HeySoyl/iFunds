@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36C5DE69251357F5001965B9 /* FundsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE68251357F5001965B9 /* FundsInfo.swift */; };
+		36C5DE6A251357F5001965B9 /* FundsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE68251357F5001965B9 /* FundsInfo.swift */; };
+		36C5DE6D25135848001965B9 /* FundsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE6C25135848001965B9 /* FundsRow.swift */; };
+		36C5DE6E25135848001965B9 /* FundsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE6C25135848001965B9 /* FundsRow.swift */; };
 		36D2D7EE25122FA900C9AB25 /* Shared.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36D2D7D825122FA700C9AB25 /* Shared.xcdatamodeld */; };
 		36D2D7EF25122FA900C9AB25 /* Shared.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36D2D7D825122FA700C9AB25 /* Shared.xcdatamodeld */; };
 		36D2D7F025122FA900C9AB25 /* iFundsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D2D7DA25122FA700C9AB25 /* iFundsApp.swift */; };
@@ -17,9 +21,13 @@
 		36D2D7F525122FA900C9AB25 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D2D7DC25122FA700C9AB25 /* Persistence.swift */; };
 		36D2D7F625122FA900C9AB25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36D2D7DD25122FA900C9AB25 /* Assets.xcassets */; };
 		36D2D7F725122FA900C9AB25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36D2D7DD25122FA900C9AB25 /* Assets.xcassets */; };
+		36D2D8012512451A00C9AB25 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D2D8002512451A00C9AB25 /* SearchBar.swift */; };
+		36D2D8022512451A00C9AB25 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D2D8002512451A00C9AB25 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36C5DE68251357F5001965B9 /* FundsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInfo.swift; sourceTree = "<group>"; };
+		36C5DE6C25135848001965B9 /* FundsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsRow.swift; sourceTree = "<group>"; };
 		36D2D7D925122FA700C9AB25 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		36D2D7DA25122FA700C9AB25 /* iFundsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFundsApp.swift; sourceTree = "<group>"; };
 		36D2D7DB25122FA700C9AB25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,6 +38,7 @@
 		36D2D7EA25122FA900C9AB25 /* iFunds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFunds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36D2D7EC25122FA900C9AB25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36D2D7ED25122FA900C9AB25 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		36D2D8002512451A00C9AB25 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36C5DE6B251357FA001965B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				36D2D8002512451A00C9AB25 /* SearchBar.swift */,
+				36C5DE68251357F5001965B9 /* FundsInfo.swift */,
+				36C5DE6C25135848001965B9 /* FundsRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		36D2D7D225122FA700C9AB25 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +82,7 @@
 		36D2D7D725122FA700C9AB25 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				36C5DE6B251357FA001965B9 /* Views */,
 				36D2D7DA25122FA700C9AB25 /* iFundsApp.swift */,
 				36D2D7DB25122FA700C9AB25 /* ContentView.swift */,
 				36D2D7DC25122FA700C9AB25 /* Persistence.swift */,
@@ -197,8 +217,11 @@
 			files = (
 				36D2D7F025122FA900C9AB25 /* iFundsApp.swift in Sources */,
 				36D2D7F425122FA900C9AB25 /* Persistence.swift in Sources */,
+				36D2D8012512451A00C9AB25 /* SearchBar.swift in Sources */,
 				36D2D7EE25122FA900C9AB25 /* Shared.xcdatamodeld in Sources */,
+				36C5DE69251357F5001965B9 /* FundsInfo.swift in Sources */,
 				36D2D7F225122FA900C9AB25 /* ContentView.swift in Sources */,
+				36C5DE6D25135848001965B9 /* FundsRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +231,11 @@
 			files = (
 				36D2D7F125122FA900C9AB25 /* iFundsApp.swift in Sources */,
 				36D2D7F525122FA900C9AB25 /* Persistence.swift in Sources */,
+				36D2D8022512451A00C9AB25 /* SearchBar.swift in Sources */,
 				36D2D7EF25122FA900C9AB25 /* Shared.xcdatamodeld in Sources */,
+				36C5DE6A251357F5001965B9 /* FundsInfo.swift in Sources */,
 				36D2D7F325122FA900C9AB25 /* ContentView.swift in Sources */,
+				36C5DE6E25135848001965B9 /* FundsRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

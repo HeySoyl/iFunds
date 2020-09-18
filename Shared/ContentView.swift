@@ -15,29 +15,32 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    @State private var fundesCode = ""
+    @State private var isEditing = false    //是否在编辑状态
 
     var body: some View {
-        List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+        NavigationView {
+            List {
+                SearchBar(fundesCode: $fundesCode)
+                
+                ForEach(items) { item in
+                    NavigationLink(destination: FundsInfo()) {
+                        FundsRow()
+                    }
+                }
+                .onDelete(perform: deleteItems)
             }
-            .onDelete(perform: deleteItems)
-        }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
-            }
+            .navigationTitle("基金列表")
         }
     }
 
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
+            self.isEditing = false
             newItem.timestamp = Date()
+            newItem.fundsCode = self.fundesCode
 
             do {
                 try viewContext.save()
@@ -65,13 +68,6 @@ struct ContentView: View {
         }
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
