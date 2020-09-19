@@ -51,16 +51,54 @@ struct ContentView: View {
 //    }
     
     var body: some View {
-        VStack {
-            List(fundsModel.funds, id: \.objectID) { obj in
-                Text(fundsModel.getValue(obj: obj))
-            }
-            
-            HStack {
-                TextField("ffasdfas", text: $fundsModel.fundsCode)
+        NavigationView {
+            VStack {
+                ZStack {
+                    HStack {
+                        TextField("搜索", text: $fundsModel.fundsCode)
+        //                TextField("搜索", text: $fundesCode)
+                            .padding(15)
+                            .padding(.horizontal, 25)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(8)
+                            .overlay(
+                                HStack {
+                                    Image(systemName: "magnifyingglass")
+                                        .foregroundColor(.gray)
+                                        .padding(.leading, 15.0)
+                                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+
+                                    if isEditing {
+                                        Button(action: {
+                                            self.fundsModel.fundsCode = ""
+                                            self.isEditing = false
+                                        }) {
+                                            Image(systemName: "multiply.circle.fill")
+                                        }
+                                        .padding(.trailing, 5.0)
+                                        .buttonStyle(BorderlessButtonStyle())
+                                    }
+                                }
+                            )
+                            .onTapGesture {
+                                self.isEditing = true
+                            }
+
+                        Button(action: fundsModel.writeData) {
+                            Text("Save")
+                        }
+
+                    }
+                    .padding(.horizontal, 15.0)
+                }
                 
-                Button(action: fundsModel.writeData) {
-                    Text("Save")
+                List {
+                    ForEach(fundsModel.funds, id: \.objectID) { obj in
+                        NavigationLink(destination: FundsInfo()) {
+                            FundsRow()
+                        }
+    //                    Text(fundsModel.getValue(obj: obj))
+                    }.onDelete(perform: fundsModel.deleteData(indexSet: ))
                 }
             }
         }

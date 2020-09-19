@@ -40,7 +40,24 @@ class FundsModel : ObservableObject {
             self.funds.append(entity)
         } catch { print(error.localizedDescription) }
     }
-    func deleteData() {}
+    
+    func deleteData(indexSet: IndexSet) {
+        for index in indexSet {
+            do {
+                let obj = funds[index]
+                
+                context.delete(obj)
+                
+                try context.save()
+                
+                let index = funds.firstIndex(of: obj)
+                
+                funds.remove(at: index!)
+                
+            } catch { print(error.localizedDescription) }
+        }
+    }
+    
     func updateData() {}
     
     func getValue(obj : NSManagedObject) -> String {

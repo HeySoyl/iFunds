@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @Binding var fundesCode: String
+//    @Binding var fundesCode: String
     @State private var isEditing = false
+    
+    @StateObject var fundsModel = FundsModel()
     
     var body: some View {
         ZStack {
             HStack {
-                TextField("搜索", text: $fundesCode)
+                TextField("搜索", text: $fundsModel.fundsCode)
+//                TextField("搜索", text: $fundesCode)
                     .padding(15)
                     .padding(.horizontal, 25)
                     .background(Color(.systemGray6))
@@ -28,7 +31,7 @@ struct SearchBar: View {
                             
                             if isEditing {
                                 Button(action: {
-                                    self.fundesCode = ""
+                                    self.fundsModel.fundsCode = ""
                                     self.isEditing = false
                                 }) {
                                     Image(systemName: "multiply.circle.fill")
@@ -41,14 +44,19 @@ struct SearchBar: View {
                     .onTapGesture {
                         self.isEditing = true
                     }
+                
+                Button(action: fundsModel.writeData) {
+                    Text("Save")
+                }
+                
             }
             .padding(.horizontal, 15.0)
         }
     }
 }
 
-struct SearchBar_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchBar(fundesCode: .constant(""))
-    }
-}
+//struct SearchBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchBar(fundesCode: .constant(""))
+//    }
+//}
