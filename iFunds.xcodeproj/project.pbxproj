@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		369ACB972515F62C00F56D20 /* FundsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369ACB962515F62C00F56D20 /* FundsModel.swift */; };
 		36C5DE69251357F5001965B9 /* FundsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE68251357F5001965B9 /* FundsInfo.swift */; };
 		36C5DE6A251357F5001965B9 /* FundsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE68251357F5001965B9 /* FundsInfo.swift */; };
 		36C5DE6D25135848001965B9 /* FundsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE6C25135848001965B9 /* FundsRow.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		369ACB962515F62C00F56D20 /* FundsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsModel.swift; sourceTree = "<group>"; };
 		36C5DE68251357F5001965B9 /* FundsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInfo.swift; sourceTree = "<group>"; };
 		36C5DE6C25135848001965B9 /* FundsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsRow.swift; sourceTree = "<group>"; };
 		36D2D7D925122FA700C9AB25 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -59,9 +61,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		369ACB8D2515AE2400F56D20 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				36D2D7DA25122FA700C9AB25 /* iFundsApp.swift */,
+				36D2D7DD25122FA900C9AB25 /* Assets.xcassets */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		369ACB8E2515AE7400F56D20 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				36D2D7D825122FA700C9AB25 /* Shared.xcdatamodeld */,
+				36D2D7DC25122FA700C9AB25 /* Persistence.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		369ACB942515EDE300F56D20 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				369ACB962515F62C00F56D20 /* FundsModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		36C5DE6B251357FA001965B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				36D2D7DB25122FA700C9AB25 /* ContentView.swift */,
 				36D2D8002512451A00C9AB25 /* SearchBar.swift */,
 				36C5DE68251357F5001965B9 /* FundsInfo.swift */,
 				36C5DE6C25135848001965B9 /* FundsRow.swift */,
@@ -82,12 +111,10 @@
 		36D2D7D725122FA700C9AB25 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				369ACB942515EDE300F56D20 /* ViewModel */,
+				369ACB8E2515AE7400F56D20 /* CoreData */,
+				369ACB8D2515AE2400F56D20 /* Services */,
 				36C5DE6B251357FA001965B9 /* Views */,
-				36D2D7DA25122FA700C9AB25 /* iFundsApp.swift */,
-				36D2D7DB25122FA700C9AB25 /* ContentView.swift */,
-				36D2D7DC25122FA700C9AB25 /* Persistence.swift */,
-				36D2D7DD25122FA900C9AB25 /* Assets.xcassets */,
-				36D2D7D825122FA700C9AB25 /* Shared.xcdatamodeld */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -219,6 +246,7 @@
 				36D2D7F425122FA900C9AB25 /* Persistence.swift in Sources */,
 				36D2D8012512451A00C9AB25 /* SearchBar.swift in Sources */,
 				36D2D7EE25122FA900C9AB25 /* Shared.xcdatamodeld in Sources */,
+				369ACB972515F62C00F56D20 /* FundsModel.swift in Sources */,
 				36C5DE69251357F5001965B9 /* FundsInfo.swift in Sources */,
 				36D2D7F225122FA900C9AB25 /* ContentView.swift in Sources */,
 				36C5DE6D25135848001965B9 /* FundsRow.swift in Sources */,

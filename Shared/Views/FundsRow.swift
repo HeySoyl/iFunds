@@ -10,7 +10,18 @@ import SwiftUI
 struct FundsRow: View {
     var body: some View {
         VStack{
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            HStack {
+                Text("002218.SZ")
+                Spacer()
+                Text("4.180")
+            }
+            HStack {
+                Text("拓日新能")
+                    .font(.caption)
+                Spacer()
+                Text("+0.04")
+                    .foregroundColor(.red)
+            }
         }
     }
 }

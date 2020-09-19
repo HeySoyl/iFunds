@@ -18,22 +18,54 @@ struct ContentView: View {
     
     @State private var fundesCode = ""
     @State private var isEditing = false    //是否在编辑状态
+    
+    @StateObject var fundsModel = FundsModel()
 
+//    var body: some View {
+//        NavigationView {
+//            VStack {
+//
+//                SearchBar(fundesCode: $fundesCode)
+//
+//                List {
+//                    ForEach(items) { item in
+//                        NavigationLink(destination: FundsInfo()) {
+//                            FundsRow()
+//                        }
+//                    }
+//                    .onDelete(perform: deleteItems)
+//                }
+//            }
+//            .navigationTitle("基金")
+//            .toolbar {
+//                #if os(iOS)
+//                EditButton()
+//                #endif
+//
+//                Button(action: addItem) {
+//                    Image(systemName: "plus")
+//                        .foregroundColor(.gray)
+//                }
+//            }
+//        }
+//    }
+    
     var body: some View {
-        NavigationView {
-            List {
-                SearchBar(fundesCode: $fundesCode)
-                
-                ForEach(items) { item in
-                    NavigationLink(destination: FundsInfo()) {
-                        FundsRow()
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        VStack {
+            List(fundsModel.funds, id: \.objectID) { obj in
+                Text(fundsModel.getValue(obj: obj))
             }
-            .navigationTitle("基金列表")
+            
+            HStack {
+                TextField("ffasdfas", text: $fundsModel.fundsCode)
+                
+                Button(action: fundsModel.writeData) {
+                    Text("Save")
+                }
+            }
         }
     }
+    
 
     private func addItem() {
         withAnimation {

@@ -15,7 +15,6 @@ struct iFundsApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//                .frame(minWidth: 870, maxWidth: .infinity, minHeight: 650, maxHeight: .infinity)
         }
     }
 }
