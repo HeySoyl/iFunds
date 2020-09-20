@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		361BDBC52517062900EB8222 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 361BDBC42517062900EB8222 /* Alamofire */; };
-		369ACB972515F62C00F56D20 /* FundsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369ACB962515F62C00F56D20 /* FundsModel.swift */; };
+		369ACB972515F62C00F56D20 /* FundsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369ACB962515F62C00F56D20 /* FundsViewModel.swift */; };
 		36C5DE69251357F5001965B9 /* FundsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE68251357F5001965B9 /* FundsInfo.swift */; };
 		36C5DE6A251357F5001965B9 /* FundsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE68251357F5001965B9 /* FundsInfo.swift */; };
 		36C5DE6D25135848001965B9 /* FundsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE6C25135848001965B9 /* FundsRow.swift */; };
@@ -28,7 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		369ACB962515F62C00F56D20 /* FundsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsModel.swift; sourceTree = "<group>"; };
+		369ACB962515F62C00F56D20 /* FundsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsViewModel.swift; sourceTree = "<group>"; };
 		36C5DE68251357F5001965B9 /* FundsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInfo.swift; sourceTree = "<group>"; };
 		36C5DE6C25135848001965B9 /* FundsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsRow.swift; sourceTree = "<group>"; };
 		36D2D7D925122FA700C9AB25 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		369ACB942515EDE300F56D20 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				369ACB962515F62C00F56D20 /* FundsModel.swift */,
+				369ACB962515F62C00F56D20 /* FundsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 				36D2D7F425122FA900C9AB25 /* Persistence.swift in Sources */,
 				36D2D8012512451A00C9AB25 /* SearchBar.swift in Sources */,
 				36D2D7EE25122FA900C9AB25 /* Shared.xcdatamodeld in Sources */,
-				369ACB972515F62C00F56D20 /* FundsModel.swift in Sources */,
+				369ACB972515F62C00F56D20 /* FundsViewModel.swift in Sources */,
 				36C5DE69251357F5001965B9 /* FundsInfo.swift in Sources */,
 				36D2D7F225122FA900C9AB25 /* ContentView.swift in Sources */,
 				36C5DE6D25135848001965B9 /* FundsRow.swift in Sources */,

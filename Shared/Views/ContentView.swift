@@ -19,36 +19,7 @@ struct ContentView: View {
     @State private var fundesCode = ""
     @State private var isEditing = false    //是否在编辑状态
     
-    @StateObject var fundsModel = FundsModel()
-
-//    var body: some View {
-//        NavigationView {
-//            VStack {
-//
-//                SearchBar(fundesCode: $fundesCode)
-//
-//                List {
-//                    ForEach(items) { item in
-//                        NavigationLink(destination: FundsInfo()) {
-//                            FundsRow()
-//                        }
-//                    }
-//                    .onDelete(perform: deleteItems)
-//                }
-//            }
-//            .navigationTitle("基金")
-//            .toolbar {
-//                #if os(iOS)
-//                EditButton()
-//                #endif
-//
-//                Button(action: addItem) {
-//                    Image(systemName: "plus")
-//                        .foregroundColor(.gray)
-//                }
-//            }
-//        }
-//    }
+    @StateObject var fundsModel = FundsViewModel()
     
     var body: some View {
 //        NavigationView {

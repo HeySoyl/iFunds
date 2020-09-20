@@ -1,5 +1,5 @@
 //
-//  FundsModel.swift
+//  FundsViewModel.swift
 //  iFunds (iOS)
 //
 //  Created by 刘志启 on 2020/9/19.
@@ -9,9 +9,11 @@ import SwiftUI
 import CoreData
 import Combine
 
-class FundsModel : ObservableObject {
+class FundsViewModel : ObservableObject {
     @Published var funds: [NSManagedObject] = []
 //    @Published var fundsInfo: [Item] = []
+    @Published var fundsInfo = [FundsModel]()
+
     @Published var fundsCode = ""
     //updateData
     @Published var isUpddate = false
@@ -27,13 +29,27 @@ class FundsModel : ObservableObject {
         readData()
     }
     
+//    func readData() {
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+//
+//        do {
+//            let results = try context.fetch(request)
+//
+//            self.funds = results as! [NSManagedObject]
+//        } catch { print(error.localizedDescription) }
+//    }
+    
     func readData() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
         
         do {
             let results = try context.fetch(request)
             
-            self.funds = results as! [NSManagedObject]
+//            self.funds = results as! [NSManagedObject]
+            self.fundsInfo = results.map {
+                FundsModel.init(entry: $0)
+            }
         } catch { print(error.localizedDescription) }
     }
     
@@ -99,5 +115,19 @@ class FundsModel : ObservableObject {
     func openUpdateView(obj: NSManagedObject) {
         selectedObj = obj
         isUpddate.toggle()
+    }
+}
+
+
+class FundsModel {
+
+    var fundsCode: String
+    var positonCost: String
+    var positonShare: String
+
+    init(entry: Item) {
+        fundsCode = entry.fundsCode ?? "Not working"
+        positonCost = entry.positonCost ?? "Not working"
+        positonShare = entry.positonShare ?? "Not working"
     }
 }

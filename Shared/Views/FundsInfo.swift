@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FundsInfo: View {
-    @ObservedObject var model: FundsModel
+    @ObservedObject var model: FundsViewModel
         
     var body: some View {
         VStack{

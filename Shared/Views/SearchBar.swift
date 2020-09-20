@@ -11,7 +11,7 @@ struct SearchBar: View {
 //    @Binding var fundesCode: String
     @State private var isEditing = false
     
-    @StateObject var fundsModel = FundsModel()
+    @StateObject var fundsModel = FundsViewModel()
     
     var body: some View {
         ZStack {
