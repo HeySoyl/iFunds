@@ -51,7 +51,7 @@ struct ContentView: View {
 //    }
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             VStack {
                 ZStack {
                     HStack {
@@ -94,14 +94,25 @@ struct ContentView: View {
                 
                 List {
                     ForEach(fundsModel.funds, id: \.objectID) { obj in
-                        NavigationLink(destination: FundsInfo()) {
-                            FundsRow()
-                        }
-    //                    Text(fundsModel.getValue(obj: obj))
+                        Text(fundsModel.getValue(obj: obj))
+                            .onTapGesture{fundsModel.openUpdateView(obj: obj)}
+
                     }.onDelete(perform: fundsModel.deleteData(indexSet: ))
                 }
+                
+//                List {
+//                    ForEach(fundsModel.funds, id: \.self) { obj in
+//                        NavigationLink(destination: FundsInfo(model: obj)) {
+//                            FundsRow()
+//                        }
+//                    }.onDelete(perform: fundsModel.deleteData(indexSet: ))
+//                }
+                
             }
-        }
+            .sheet(isPresented: $fundsModel.isUpddate) {
+                FundsInfo(model: fundsModel)
+            }
+//        }
     }
     
 

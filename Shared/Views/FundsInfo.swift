@@ -8,15 +8,25 @@
 import SwiftUI
 
 struct FundsInfo: View {
+    @ObservedObject var model: FundsModel
+        
     var body: some View {
         VStack{
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            HStack {
+                TextField("持仓数额", text: $model.positonCost)
+            }
+            
+            TextField("持仓单价", text: $model.positonShare)
+            
+            Button(action: model.updateData) {
+                Text("保存")
+            }
         }
     }
 }
 
-struct FundsInfo_Previews: PreviewProvider {
-    static var previews: some View {
-        FundsInfo()
-    }
-}
+//struct FundsInfo_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FundsInfo()
+//    }
+//}

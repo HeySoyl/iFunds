@@ -10,9 +10,17 @@ import CoreData
 import Combine
 
 class FundsModel : ObservableObject {
-    @Published var funds : [NSManagedObject] = []
+    @Published var funds: [NSManagedObject] = []
+//    @Published var fundsInfo: [Item] = []
     @Published var fundsCode = ""
-//    @Published var item = Item()
+    //updateData
+    @Published var isUpddate = false
+    @Published var positonCost = ""
+    @Published var positonShare = ""
+    
+    // FIXME: 这里有个Error需要处理init()函数
+    @Published var selectedObj: NSManagedObject = NSManagedObject()
+        
     let context = PersistenceController.shared.container.viewContext
     
     init() {
@@ -58,9 +66,38 @@ class FundsModel : ObservableObject {
         }
     }
     
-    func updateData() {}
+    func updateData() {
+        let index = funds.firstIndex(of: selectedObj)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        
+        do {
+            let results = try context.fetch(request) as! [NSManagedObject]
+            
+            let obj = results.first { (obj) -> Bool in
+                if obj == selectedObj {return true}
+                else {return false}
+            }
+            
+            obj?.setValue(positonCost, forKey: "positonCost")
+            obj?.setValue(positonShare, forKey: "positonShare")
+            
+            try context.save()
+            
+            funds[index!] = obj!
+            isUpddate.toggle()
+            positonCost = ""
+            positonShare = ""
+            
+        } catch { print(error.localizedDescription) }
+    }
     
     func getValue(obj : NSManagedObject) -> String {
         return obj.value(forKey: "fundsCode") as! String
+    }
+
+    
+    func openUpdateView(obj: NSManagedObject) {
+        selectedObj = obj
+        isUpddate.toggle()
     }
 }
