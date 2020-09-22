@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		361BDBC52517062900EB8222 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 361BDBC42517062900EB8222 /* Alamofire */; };
-		369ACB972515F62C00F56D20 /* FundsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369ACB962515F62C00F56D20 /* FundsModel.swift */; };
+		3633E3A42517B2AF002D711A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3633E3A32517B2AF002D711A /* Home.swift */; };
+		3633E3A52517B2AF002D711A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3633E3A32517B2AF002D711A /* Home.swift */; };
+		3633E3AB2517B450002D711A /* NavigationInfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3633E3AA2517B450002D711A /* NavigationInfoBar.swift */; };
+		3633E3AC2517B450002D711A /* NavigationInfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3633E3AA2517B450002D711A /* NavigationInfoBar.swift */; };
+		369ACB972515F62C00F56D20 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369ACB962515F62C00F56D20 /* ApiService.swift */; };
 		36C5DE69251357F5001965B9 /* FundsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE68251357F5001965B9 /* FundsInfo.swift */; };
 		36C5DE6A251357F5001965B9 /* FundsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE68251357F5001965B9 /* FundsInfo.swift */; };
 		36C5DE6D25135848001965B9 /* FundsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE6C25135848001965B9 /* FundsRow.swift */; };
 		36C5DE6E25135848001965B9 /* FundsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE6C25135848001965B9 /* FundsRow.swift */; };
+		36CCEF4A2518DAC6006F55EC /* FundsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCEF492518DAC6006F55EC /* FundsViewModel.swift */; };
+		36CCEF4B2518DAC6006F55EC /* FundsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCEF492518DAC6006F55EC /* FundsViewModel.swift */; };
 		36D2D7EE25122FA900C9AB25 /* Shared.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36D2D7D825122FA700C9AB25 /* Shared.xcdatamodeld */; };
 		36D2D7EF25122FA900C9AB25 /* Shared.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36D2D7D825122FA700C9AB25 /* Shared.xcdatamodeld */; };
 		36D2D7F025122FA900C9AB25 /* iFundsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D2D7DA25122FA700C9AB25 /* iFundsApp.swift */; };
@@ -28,9 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		369ACB962515F62C00F56D20 /* FundsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsModel.swift; sourceTree = "<group>"; };
+		3633E3A32517B2AF002D711A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		3633E3AA2517B450002D711A /* NavigationInfoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInfoBar.swift; sourceTree = "<group>"; };
+		369ACB962515F62C00F56D20 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		36C5DE68251357F5001965B9 /* FundsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInfo.swift; sourceTree = "<group>"; };
 		36C5DE6C25135848001965B9 /* FundsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsRow.swift; sourceTree = "<group>"; };
+		36CCEF492518DAC6006F55EC /* FundsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsViewModel.swift; sourceTree = "<group>"; };
 		36D2D7D925122FA700C9AB25 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		36D2D7DA25122FA700C9AB25 /* iFundsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFundsApp.swift; sourceTree = "<group>"; };
 		36D2D7DB25122FA700C9AB25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,7 +93,8 @@
 		369ACB942515EDE300F56D20 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				369ACB962515F62C00F56D20 /* FundsModel.swift */,
+				369ACB962515F62C00F56D20 /* ApiService.swift */,
+				36CCEF492518DAC6006F55EC /* FundsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -93,7 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				36D2D7DB25122FA700C9AB25 /* ContentView.swift */,
+				3633E3A32517B2AF002D711A /* Home.swift */,
 				36D2D8002512451A00C9AB25 /* SearchBar.swift */,
+				3633E3AA2517B450002D711A /* NavigationInfoBar.swift */,
 				36C5DE68251357F5001965B9 /* FundsInfo.swift */,
 				36C5DE6C25135848001965B9 /* FundsRow.swift */,
 			);
@@ -211,6 +223,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 36D2D7D225122FA700C9AB25;
 			packageReferences = (
@@ -253,8 +266,11 @@
 				36D2D7F025122FA900C9AB25 /* iFundsApp.swift in Sources */,
 				36D2D7F425122FA900C9AB25 /* Persistence.swift in Sources */,
 				36D2D8012512451A00C9AB25 /* SearchBar.swift in Sources */,
+				3633E3AB2517B450002D711A /* NavigationInfoBar.swift in Sources */,
 				36D2D7EE25122FA900C9AB25 /* Shared.xcdatamodeld in Sources */,
-				369ACB972515F62C00F56D20 /* FundsModel.swift in Sources */,
+				3633E3A42517B2AF002D711A /* Home.swift in Sources */,
+				369ACB972515F62C00F56D20 /* ApiService.swift in Sources */,
+				36CCEF4A2518DAC6006F55EC /* FundsViewModel.swift in Sources */,
 				36C5DE69251357F5001965B9 /* FundsInfo.swift in Sources */,
 				36D2D7F225122FA900C9AB25 /* ContentView.swift in Sources */,
 				36C5DE6D25135848001965B9 /* FundsRow.swift in Sources */,
@@ -266,11 +282,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				36D2D7F125122FA900C9AB25 /* iFundsApp.swift in Sources */,
+				3633E3AC2517B450002D711A /* NavigationInfoBar.swift in Sources */,
 				36D2D7F525122FA900C9AB25 /* Persistence.swift in Sources */,
 				36D2D8022512451A00C9AB25 /* SearchBar.swift in Sources */,
 				36D2D7EF25122FA900C9AB25 /* Shared.xcdatamodeld in Sources */,
+				36CCEF4B2518DAC6006F55EC /* FundsViewModel.swift in Sources */,
 				36C5DE6A251357F5001965B9 /* FundsInfo.swift in Sources */,
 				36D2D7F325122FA900C9AB25 /* ContentView.swift in Sources */,
+				3633E3A52517B2AF002D711A /* Home.swift in Sources */,
 				36C5DE6E25135848001965B9 /* FundsRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

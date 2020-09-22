@@ -8,18 +8,39 @@
 import SwiftUI
 
 struct FundsInfo: View {
-    @ObservedObject var model: FundsModel
-        
+    @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var model: Item
+    
+    @State private var positonCost = ""
+    @State private var positonShare = ""
+            
     var body: some View {
         VStack{
-            HStack {
-                TextField("持仓数额", text: $model.positonCost)
+            Section(header: Text(model.fundsCode ?? "")) {
+                HStack {
+                    TextField("持仓数额", text: self.$positonCost)
+                }
+                
+                TextField("持仓单价", text: self.$positonShare)
+                
+                Button(action: addItem) {
+                    Text("保存")
+                }
             }
-            
-            TextField("持仓单价", text: $model.positonShare)
-            
-            Button(action: model.updateData) {
-                Text("保存")
+        }
+    }
+    
+    private func addItem() {
+        withAnimation {
+            self.model.positonCost = self.positonCost
+            self.model.positonShare = self.positonShare
+            self.model.timestamp = Date()
+
+            do {
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
