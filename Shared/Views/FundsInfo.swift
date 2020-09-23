@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FundsInfo: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @EnvironmentObject var model: Item
+    @EnvironmentObject var model: Funds
     
     @State private var positonCost = ""
     @State private var positonShare = ""
@@ -18,10 +18,12 @@ struct FundsInfo: View {
         VStack{
             Section(header: Text(model.fundsCode ?? "")) {
                 HStack {
-                    TextField("持仓数额", text: self.$positonCost)
+                    TextField("持仓数额", text: self.$positonShare)
+                        .keyboardType(.numberPad)
                 }
                 
-                TextField("持仓单价", text: self.$positonShare)
+                TextField("持仓单价", text: self.$positonCost)
+                    .keyboardType(.numberPad)
                 
                 Button(action: addItem) {
                     Text("保存")
@@ -32,8 +34,8 @@ struct FundsInfo: View {
     
     private func addItem() {
         withAnimation {
-            self.model.positonCost = self.positonCost
-            self.model.positonShare = self.positonShare
+            self.model.positonCost = Double(self.positonCost) ?? 0.0
+            self.model.positonShare = Double(self.positonShare) ?? 0.0
             self.model.timestamp = Date()
 
             do {

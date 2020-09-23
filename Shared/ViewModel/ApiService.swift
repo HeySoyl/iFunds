@@ -37,7 +37,7 @@ final class FundsApiService: ObservableObject {
     
     @Published var funds = Fundgz()
     private func fetchFunds(fundsCode: String) {
-        NetHandler().getFundsInfo(fundCode: fundsCode) {
+        NetHandler().getFundsInfo(fundsCode: fundsCode) {
             self.funds = $0
         }
     }
@@ -63,12 +63,12 @@ class NetHandler {
     }
     
     // 基金查询
-    func getFundsInfo(fundCode: String, completion: @escaping (Fundgz) -> Void){
+    func getFundsInfo(fundsCode: String, completion: @escaping (Fundgz) -> Void){
         let headers: HTTPHeaders = [
             "Content-Type":"application/x-www-form-urlencoded; charset=utf-8",
             "Accept":"application/json",
         ]
-        let url = "http://fundgz.1234567.com.cn/js/\(fundCode).js"
+        let url = "http://fundgz.1234567.com.cn/js/\(fundsCode).js"
         AF.request(url, headers: headers)
             .responseString(encoding: String.Encoding.utf8) { response in
                 let data = response.value?
