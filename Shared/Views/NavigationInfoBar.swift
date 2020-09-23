@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct NavigationInfoBar: View {
-    @ObservedObject var model = IndexApiService()
+    //仅创建一次数据，使用StateObject而不是ObservedObject
+    @StateObject var model = IndexApiService()
     
     // 上证指数、深证指数
     var body: some View {

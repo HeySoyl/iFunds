@@ -13,6 +13,8 @@
 		3633E3AB2517B450002D711A /* NavigationInfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3633E3AA2517B450002D711A /* NavigationInfoBar.swift */; };
 		3633E3AC2517B450002D711A /* NavigationInfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3633E3AA2517B450002D711A /* NavigationInfoBar.swift */; };
 		369ACB972515F62C00F56D20 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369ACB962515F62C00F56D20 /* ApiService.swift */; };
+		36BD4A84251B886F0019D0E7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 36BD4A83251B886F0019D0E7 /* Alamofire */; };
+		36BD4A8B251B8D740019D0E7 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369ACB962515F62C00F56D20 /* ApiService.swift */; };
 		36C5DE69251357F5001965B9 /* FundsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE68251357F5001965B9 /* FundsInfo.swift */; };
 		36C5DE6A251357F5001965B9 /* FundsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE68251357F5001965B9 /* FundsInfo.swift */; };
 		36C5DE6D25135848001965B9 /* FundsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C5DE6C25135848001965B9 /* FundsRow.swift */; };
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36BD4A84251B886F0019D0E7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +102,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		36BD4A82251B886F0019D0E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		36C5DE6B251357FA001965B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 				36D2D7E425122FA900C9AB25 /* iOS */,
 				36D2D7EB25122FA900C9AB25 /* macOS */,
 				36D2D7E325122FA900C9AB25 /* Products */,
+				36BD4A82251B886F0019D0E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,6 +206,9 @@
 			dependencies = (
 			);
 			name = "iFunds (macOS)";
+			packageProductDependencies = (
+				36BD4A83251B886F0019D0E7 /* Alamofire */,
+			);
 			productName = "iFunds (macOS)";
 			productReference = 36D2D7EA25122FA900C9AB25 /* iFunds.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +301,7 @@
 				36D2D8022512451A00C9AB25 /* SearchBar.swift in Sources */,
 				36D2D7EF25122FA900C9AB25 /* Shared.xcdatamodeld in Sources */,
 				36CCEF4B2518DAC6006F55EC /* FundsViewModel.swift in Sources */,
+				36BD4A8B251B8D740019D0E7 /* ApiService.swift in Sources */,
 				36C5DE6A251357F5001965B9 /* FundsInfo.swift in Sources */,
 				36D2D7F325122FA900C9AB25 /* ContentView.swift in Sources */,
 				3633E3A52517B2AF002D711A /* Home.swift in Sources */,
@@ -350,7 +365,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -406,7 +421,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -465,7 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7XRL4435MW;
@@ -490,7 +505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7XRL4435MW;
@@ -554,6 +569,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		361BDBC42517062900EB8222 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 361BDBC32517062900EB8222 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		36BD4A83251B886F0019D0E7 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 361BDBC32517062900EB8222 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;

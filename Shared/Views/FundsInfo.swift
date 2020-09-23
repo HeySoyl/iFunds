@@ -19,11 +19,10 @@ struct FundsInfo: View {
             Section(header: Text(model.fundsCode ?? "")) {
                 HStack {
                     TextField("持仓数额", text: self.$positonShare)
-                        .keyboardType(.numberPad)
                 }
                 
                 TextField("持仓单价", text: self.$positonCost)
-                    .keyboardType(.numberPad)
+//                    .keyboardType(.numberPad)
                 
                 Button(action: addItem) {
                     Text("保存")

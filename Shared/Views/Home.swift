@@ -20,9 +20,7 @@ struct Home: View {
     @State private var fundesCode = ""
     @State private var isEditing = false    //搜索是否在编辑状态
     @State private var isEditable = false   //列表编辑状态
-
-    var columns = Array(repeating: GridItem(.flexible(), spacing: 30), count: 1)
-
+    
     var body: some View {
         VStack {
             NavigationInfoBar()
@@ -38,21 +36,14 @@ struct Home: View {
                 }
                 .onDelete(perform: deleteFunds)
                 .onMove(perform: moveFunds)
-                .onLongPressGesture(minimumDuration: 0.5) {
-                    withAnimation {
-                        self.isEditable = true
-                    }
-                }
+//                .onLongPressGesture(minimumDuration: 0.5) {
+//                    withAnimation {
+//                        self.isEditable = true
+//                    }
+//                }
             }
-            .environment(\.editMode, isEditable ? .constant(.active) : .constant(.inactive))
+//            .environment(\.editMode, isEditable ? .constant(.active) : .constant(.inactive))
         }
-        .navigationBarHidden(true)
-//        .preferredColorScheme(.dark)
-//        .toolbar {
-//            #if os(iOS)
-//            EditButton()
-//            #endif
-//        }
     }
 
     var searchBar: some View {
@@ -60,7 +51,7 @@ struct Home: View {
             TextField("搜索", text: $fundesCode)
                 .padding(15)
                 .padding(.horizontal, 25)
-                .background(Color(.systemGray6))
+//                .background(Color(.systemGray6))
                 .cornerRadius(8)
                 .overlay(
                     HStack {
